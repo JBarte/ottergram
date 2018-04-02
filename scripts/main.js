@@ -55,7 +55,6 @@ function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(addThumbClickHandler);
-  changeRandomUrl();
 }
 
 initializeEvents();
