@@ -51,7 +51,11 @@ a {
   max-width: 120px;
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
-  transition: transform 133ms ease-in-out;
+  transition: transform 133ms;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
 }
 
 .thumbnail-list {
@@ -85,7 +89,6 @@ a {
 .detail-image-frame {
   position: relative;
   text-align: center;
-  transition: transform 333ms cubic-bezier(1,.06,.28,1);
 }
 .detail-image {
   width: 90%;
@@ -100,7 +103,20 @@ a {
   font-size: 40px;
 }
 
-@media all and (orientation:landscape) {
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
+}
+
+@media all and (min-width: 768px) {
   .main-content {
     flex-direction: row;
     overflow: hidden;
@@ -110,6 +126,7 @@ a {
     flex-direction: column;
     order: 0;
     margin-left: 20px;
+    padding: 0 35px;
   }
 
   .thumbnail-item {
